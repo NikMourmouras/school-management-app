@@ -1,8 +1,17 @@
 public class Subject {
 
-    private String subjectTitle;
+    private int id;
+    private String title;
 
-    public Subject(String subjectTitle) {
-        this.subjectTitle = subjectTitle;
+    public Subject(String title) {
+        this.title = title;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getTitle() {
+        return title;
     }
 }

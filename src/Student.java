@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 public class Student {
 
+    private int id;
     private String name;
     private String surname;
     private String dateOfBirth;
@@ -21,6 +22,28 @@ public class Student {
 
     }
 
+    public int getId() {
+        return id;
+    }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public String getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public String getAddress() {
+        return address;
+    }
 
 }

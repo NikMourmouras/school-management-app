@@ -1,16 +1,25 @@
 public class Grade {
 
-    private String grade;
+    private int id;
+    private double grade;
     private Student student;
     private Subject subject;
 
-    public Grade(String grade, Student student, Subject subject) {
+    public Grade(double grade, Student student, Subject subject) {
         this.grade = grade;
-        this.student = getStudent();
-        this.subject = getSubject();
+        this.student = student;
+        this.subject = subject;
     }
 
-    public Student getStudent() { return student; }
-    public Subject getSubject() { return subject; }
+    public Student getStudent() {
+        return student;
+    }
 
+    public Subject getSubject() {
+        return subject;
+    }
+
+    public double getGrade() {
+        return grade;
+    }
 }
