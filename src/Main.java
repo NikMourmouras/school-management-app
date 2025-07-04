@@ -16,18 +16,26 @@ public class Main {
 
 
         Connection connection = DBUtils.getConnection();
-        StudentDAO studentDAO = new StudentDAO(connection);
-        SubjectDAO subjectDAO = new SubjectDAO(connection);
+//        StudentDAO studentDAO = new StudentDAO(connection);
+//        SubjectDAO subjectDAO = new SubjectDAO(connection);
 
 //        Student student = new Student("Maria", "Papadopoulou", "10-03-1991", "Female", "Athens");
 
-        Subject subject = new Subject("History");
-        boolean success = subjectDAO.addSubject(subject);
+//        Subject subject = new Subject("History");
+//        boolean success = subjectDAO.addSubject(subject);
+//
+//
+//
+//        System.out.println(success ? "✅ Subject added!" : "❌ Failed to add subject.");
+
+//        new AddSubjectForm();
+
+//        new AddStudentForm();
+        
+//        new AssignSubjectToStudentForm();
 
 
-
-        System.out.println(success ? "✅ Subject added!" : "❌ Failed to add subject.");
-
+//        new AddGradeForm();
 
 
     }
