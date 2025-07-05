@@ -53,4 +53,33 @@ public class StudentDAO {
 
         return students;
     }
+
+    public boolean deleteStudentCompletely(int studentId) {
+        String deleteGradesSQL = "DELETE FROM grades WHERE student_id = ?";
+        String deleteAssignmentsSQL = "DELETE FROM student_subjects WHERE student_id = ?";
+        String deleteStudentSQL = "DELETE FROM students WHERE id = ?";
+
+        try (
+                PreparedStatement deleteGrades = connection.prepareStatement(deleteGradesSQL);
+                PreparedStatement deleteAssignments = connection.prepareStatement(deleteAssignmentsSQL);
+                PreparedStatement deleteStudent = connection.prepareStatement(deleteStudentSQL)
+        ) {
+
+            deleteGrades.setInt(1, studentId);
+            deleteGrades.executeUpdate();
+
+            deleteAssignments.setInt(1, studentId);
+            deleteAssignments.executeUpdate();
+
+            deleteStudent.setInt(1, studentId);
+            int rowsAffected = deleteStudent.executeUpdate();
+
+            return rowsAffected > 0;
+
+        } catch (SQLException e) {
+            System.out.println("❌ Error deleting student completely: " + e.getMessage());
+            return false;
+        }
+    }
+
 }
