@@ -49,4 +49,33 @@ public class SubjectDAO {
 
         return subjects;
     }
+
+    public boolean deleteSubjectCompletely (int subjectID){
+
+        String deleteGradesSQL = "DELETE FROM grades WHERE subject_id = ?";
+        String deleteAssignmentSQL = "DELETE FROM student_subjects WHERE subject_id = ?";
+        String deleteSubjectSQL = "DELETE FROM subjects WHERE id = ?";
+
+        try (
+                PreparedStatement deleteGrades = connection.prepareStatement(deleteGradesSQL);
+                PreparedStatement deleteAssignment = connection.prepareStatement(deleteAssignmentSQL);
+                PreparedStatement deleteSubject = connection.prepareStatement(deleteSubjectSQL);
+                ) {
+            deleteGrades.setInt(1, subjectID);
+            deleteGrades.executeUpdate();
+
+            deleteAssignment.setInt(1, subjectID);
+            deleteAssignment.executeUpdate();
+
+            deleteSubject.setInt(1, subjectID);
+            int rowsAffected = deleteSubject.executeUpdate();
+
+            return rowsAffected > 0;
+
+        } catch (SQLException e) {
+            System.out.println("❌ Error deleting subject completely: " + e.getMessage());
+            return false;
+        }
+    }
+
 }

@@ -24,5 +24,4 @@ public class Subject {
     public String toString() {
         return title;
     }
-
 }
