@@ -18,7 +18,7 @@ This project was created as part of my training in Java, JDBC, and MySQL to prac
 - **Java** (JDBC, OOP, DAO pattern)
 - **MySQL** (relational database)
 - **JDBC Driver**
-- **IDE**: IntelliJ IDEA / VS Code
+- **IDE**: IntelliJ IDEA
 
 ---
 
